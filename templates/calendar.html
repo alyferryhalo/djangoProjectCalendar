@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+ <style type="text/css">
+   BODY {
+    background: url(https://kartinkinaden.ru/uploads/posts/2020-07/1593808572_13-p-nyashnii-fon-18.jpg) repeat; 
+   }
+ </style>
+
+<div class="clearfix">
+    <span class="left m-2" style="font-size: 20px; color:#1e213d; background-color: #fadbc8; border-radius: 10px;"> Это ты, <b>{{ request.user }}</b>? До сих пор <b>быдлокодишь</b>?</span>
+    <a class="btn btn-info right" href="{% url 'logout' %}"> ВЫПУСТИ МЕНЯ </a>
+	<a class="btn btn-info right mr-2" href="{% url 'calendarapp:calendar' %}?{{ next_month }} "> Вперёд >> </a>
+    <a class="btn btn-info right mr-2" href="{% url 'calendarapp:calendar' %}?{{ prev_month }}"> << Назад </a>
+    <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_new' %}"> + Добавить дело </a>
+</div>
+<div style="color: #092936;">
+    {{ calendar }}
+</div>
+
+
+
+{% endblock %}

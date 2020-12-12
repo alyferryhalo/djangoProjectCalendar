@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Signup {% endblock %}
+
+{% block content %}
+
+ <style type="text/css">
+   BODY {
+    background: url(https://kartinkinaden.ru/uploads/posts/2020-07/1593808572_13-p-nyashnii-fon-18.jpg) repeat; 
+   }
+ </style>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6  m-2" style="background-color: #fadbc8; border-radius: 10px; padding: 15px;">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-primary mt-2" type="submit" value="Signup">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Event Details
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="clearfix">
+            <a class="btn btn-primary left" href="{% url 'calendarapp:calendar' %}"> Календарь </a>
+            <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"> Редактировать </a>
+        </div>
+        
+        <div class="clearfix">
+            <h3>Название: {{ event.title }}</h3>
+            <p>От <span style="color: gray;">{{ event.start_time }}</span> До <span style="color: gray;">{{ event.end_time }}</span></p>
+            <hr>
+            <p><b>Выполнено:</b> {{ event.complete }}</p>
+            <p>{{ event.description }}</p>
+        </div>
+        <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"> Удалить </a>
+        <hr>
+
+{% endblock %}
